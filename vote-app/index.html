@@ -16,7 +16,7 @@
 <body>
     <h3 class="text-center">Story Vote App</h3>
     <div class="container col-4" id="app">
-        <story-component v-for="story in sortedStories" v-bind:key="story.id" v-bind:story="story" v-bind:stories="sortedStories"></story-component>
+        <story-component v-for="story in sortedStories" :key="story.id" :story="story" :stories="sortedStories"></story-component>
     </div>
     <script src="http://unpkg.com/vue"></script>
     <script src="./stories_seed.js"></script>
