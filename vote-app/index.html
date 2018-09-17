@@ -15,40 +15,15 @@
 
 <body>
     <h3 class="text-center">Story Vote App</h3>
-    <div class="container" id="app">
-        <div class="card-group">
-            <div class="card">
-                <img class="card-img-top" v-bind:src="stories[0].storyImage" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title"><a v-bind:href="stories[0].url"> {{stories[0].title}}</a></h5>
-                    <p class="card-text">{{stories[0].text}}</p>
-                    <p class="card-text"><small class="text-muted">{{stories[0].postedAt}}</small></p>
-                    <button class="btn btn-primary">UpVote</button>
-                    <span class="badge badge-secondary float-right">{{stories[0].votes}}</span>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="https://loremflickr.com/320/240?random=2" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Marsh</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text"><small class="text-muted">published 3 mins ago</small></p>
-                    <button class="btn btn-primary">UpVote</button>
-                    <span class="badge badge-secondary float-right">4</span>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="https://loremflickr.com/320/240?random=3" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Cattle</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">published 3 mins ago</small></p>
-                    <button class="btn btn-primary">UpVote</button>
-                    <span class="badge badge-secondary float-right">4</span>
-                </div>
+    <div class="container col-4" id="app">
+        <div class="card" v-for="story in stories" v-bind:key="story.id">
+            <img class="card-img-top" v-bind:src="story.storyImage" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><a v-bind:href="story.url"> {{story.title}}</a></h5>
+                <p class="card-text">{{story.text}}</p>
+                <p class="card-text"><small class="text-muted">{{story.postedAt}}</small></p>
+                <button class="btn btn-primary">UpVote</button>
+                <span class="badge badge-secondary float-right">{{story.votes}}</span>
             </div>
         </div>
     </div>
